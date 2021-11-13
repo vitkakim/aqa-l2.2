@@ -18,6 +18,7 @@ public class CardDeliveryTest {
 
     @Test
     void shouldTest() {
+     //   open("http://localhost:9999");
         open("http://localhost:9999");
         $("[data-test-id='city'] input").setValue("Санкт-Петербург");
         calendar.add(Calendar.DAY_OF_YEAR, 3);
