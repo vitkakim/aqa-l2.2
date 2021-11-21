@@ -1,10 +1,12 @@
 package ru.netology;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
+import javax.lang.model.element.Element;
 import java.text.ParseException;
 import java.time.Duration;
 import java.time.LocalDate;
@@ -39,12 +41,11 @@ public class CardDeliveryTest {
         $("[data-test-id='city'] input").setValue("Са");
         $$(".menu-item").find(exactText("Самара")).click();
         $(".input__icon").click();
-        if ($("[data-day='1638046800000']").isDisplayed() == false) {
+        System.out.println(dayTwo.getDayTwo());
+        if ($(byAttribute("data-day", dayTwo.getDayTwo())).isDisplayed() == false) {
             $("[data-step='1']").click();
         }
-//        data-day="1638046800000"
-        $("[data-day='1638046800000']").click();
-//        $(byAttribute("data-day", dayTwo.getDayTwo())).click();
+        $(byAttribute("data-day", dayTwo.getDayTwo())).click();
         $("[data-test-id='name'] input").setValue("Анисимова Виктория Эдуардовна");
         $("[data-test-id='phone'] input").setValue("+12345678901");
         $("[data-test-id='agreement'] .checkbox__box").click();
