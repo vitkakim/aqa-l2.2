@@ -39,7 +39,7 @@ public class CardDeliveryTest {
         $("[data-test-id='city'] input").setValue("Са");
         $$(".menu-item").find(exactText("Самара")).click();
         $(".input__icon").click();
-        while ($(byAttribute("data-day", dayTwo.getDayTwo())).isDisplayed() == false) {
+        if ($(byAttribute("data-day", dayTwo.getDayTwo())).isDisplayed() == false) {
             $("[data-step='1']").click();
         }
         $(byAttribute("data-day", dayTwo.getDayTwo())).click();
