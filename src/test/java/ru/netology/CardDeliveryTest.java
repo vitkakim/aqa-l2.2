@@ -39,11 +39,11 @@ public class CardDeliveryTest {
         $("[data-test-id='city'] input").setValue("Са");
         $$(".menu-item").find(exactText("Самара")).click();
         $(".input__icon").click();
-        if ($("data-day='1638046800000'").isDisplayed() == false) {
+        if ($("[data-day='1638046800000']").isDisplayed() == false) {
             $("[data-step='1']").click();
         }
 //        data-day="1638046800000"
-        $("data-day='1638046800000'").click();
+        $("[data-day='1638046800000']").click();
 //        $(byAttribute("data-day", dayTwo.getDayTwo())).click();
         $("[data-test-id='name'] input").setValue("Анисимова Виктория Эдуардовна");
         $("[data-test-id='phone'] input").setValue("+12345678901");
